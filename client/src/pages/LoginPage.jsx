@@ -19,6 +19,10 @@ const LoginPage = () => {
       setIsDataSubmitted(true);
       return;
     }
+    if (currState === "Sign up" && isDataSubmitted && !bio.trim()) {
+       alert("Bio is required");
+       return;
+    }
 
     login(currState === "Sign up" ? "signup" : "login", {
       fullName,
