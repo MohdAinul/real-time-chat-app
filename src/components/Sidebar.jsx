@@ -2,7 +2,7 @@ import React from 'react'
 import assets , {userDummyData} from '../assets/assets'
 import { useNavigate } from 'react-router-dom'
 
-const Sidebar = ({ selectedUser }) => {
+const Sidebar = ({ selectedUser,setselectedUser }) => {
   const navigate = useNavigate()
 
   return (
@@ -53,7 +53,7 @@ const Sidebar = ({ selectedUser }) => {
         {userDummyData.map((user, index) => (
           <div
             onClick={() => {
-              setSelectedUser(user)}} 
+              setselectedUser(user)}} 
               key={index}
               className={`relative flex items-center gap-2 p-2 pl-4 rounded cursor-pointer max-sm:text-sm ${
               selectedUser?._id === user._id && "bg-[#282142]/50"
